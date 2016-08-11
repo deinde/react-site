@@ -7,7 +7,7 @@
   <script src="https://fb.me/react-dom-15.1.0.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
   <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
-  
+  <link rel="stylesheet" href="style.css">
   <style>
   
   </style>
@@ -20,6 +20,30 @@
   </div>
   
   <script type="text/babel">
+
+
+
+var Home = React.createClass({
+  render: function() {
+      return (
+        <div>
+          <h2>HELLO</h2>
+          <p>Cras facilisis urna ornare ex volutpat, et
+          convallis erat elementum. Ut aliquam, ipsum vitae
+          gravida suscipit, metus dui bibendum est, eget rhoncus nibh
+          metus nec massa. Maecenas hendrerit laoreet augue
+          nec molestie. Cum sociis natoque penatibus et magnis
+          dis parturient montes, nascetur ridiculus mus.</p>
+  
+          <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+        </div>
+      );
+    }
+});
+
+
+
+
   var App = React.createClass({
   render: function() {
     return (
@@ -31,7 +55,7 @@
           <li>Contact</li>
         </ul>
         <div className="content">
- 
+         <Home/>
         </div>
       </div>
     )
@@ -40,10 +64,12 @@
     var destination = document.querySelector("#container");
   
     ReactDOM.render(
-      <div>
-        <App/>
-      </div>,
-      destination
+  <ReactRouter.Router>
+    <ReactRouter.Route path="/" component={App}>
+ 
+    </ReactRouter.Route>
+  </ReactRouter.Router>,
+  destination
     );
   </script>
 </body>
